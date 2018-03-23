@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './LoginForm.css';
 import Validator from 'validator';
-import InLineError from './messages/InLineError';
+import PropTypes from 'prop-types';
+import InLineError from '../messages/InLineError';
 class LoginForm extends Component {
     constructor(props) {
         super(props);
@@ -25,11 +26,15 @@ class LoginForm extends Component {
         const errors = this.validate(this.state.data);
         console.log(errors);
         this.setState({ errors });
+        if(Object.keys(errors).length === 0){
+            this.props.submit(this.state.data);
+        }
     };
     validate = (data) => {
         const errors = {};
         if (!Validator.isEmail(data.email)) errors.email = "Invalid email";
         if (!data.password) errors.password = "Can't be blank";
+        if(data.password.length<6) errors.password = "Password need to have at least 6 letters.";
         return errors;
     }
     render() {
@@ -45,7 +50,7 @@ class LoginForm extends Component {
                     placeholder="Email address"
                     value={data.email}
                     onChange={this.onChange} 
-                    error={!!errors.email}/>
+                    />
                 {errors.email && <InLineError text={errors.email} />}
                 <input
                     type="password"
@@ -55,7 +60,7 @@ class LoginForm extends Component {
                     placeholder="Password"
                     value={data.password}
                     onChange={this.onChange} />
-                {errors.email && <InLineError text={errors.password} />}
+                {errors.password && <InLineError text={errors.password} />}
                 <button
                     className="btn btn-lg btn-primary btn-block"
                     type="submit">Sign in</button>
@@ -64,4 +69,9 @@ class LoginForm extends Component {
         );
     }
 }
+
+LoginForm.propTypes = {
+    submit: PropTypes.func.isRequired
+};
+
 export default LoginForm;
