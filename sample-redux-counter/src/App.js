@@ -5,7 +5,6 @@ import { createStore } from 'redux';
 import { Provider, connect } from 'react-redux';
 
 class Counter extends Component {
-  onIncreaseClick(){}
   render() {
     const { value, onIncreaseClick } = this.props;
     return (
