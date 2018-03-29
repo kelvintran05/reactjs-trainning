@@ -54,7 +54,7 @@ class Navigation extends Component {
     onClickTitle = (e) => {
         e.preventDefault();
         this.props.actions.click(this.props.children);
-        console.log(this.props.children);
+        console.log(e.target.value);
         console.log("Click: " + this.props.actions.click(this.props.children));
     }
 }
