@@ -1,16 +1,15 @@
-export const USER_LOGGER_OUT = "USER_LOGGER_OUT";
-export const logout = () => {
+import { logoutAction } from '../../actions/app';
+
+export const HOME_CLEAN_STATE = 'HOME_CLEAN_STATE';
+
+export const cleanStateAction = () => {
     return {
-        type: USER_LOGGER_OUT,
-        payload: {
-            state: {
-                data: {
-                    email: '',
-                    password: ''
-                },
-                isAuthenticated: false,
-                errors: {}
-            }
-        }
+        type: HOME_CLEAN_STATE
     }
 }
+export const homeLogoutAction = () => {
+    return dispatch => {
+        dispatch(logoutAction());
+    }
+}
+

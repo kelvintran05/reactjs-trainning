@@ -1,18 +1,13 @@
-const USER_LOGGER_IN = "USER_LOGGER_IN";
-// const initState = {
-//   data: {
-//     email: '',
-//     password: ''
-//   },
-//   isAuthenticated: false,
-//   errors: {}
-// };
-export default (state = {}, action = {}) => {
-  switch (action.type) {
-    case USER_LOGGER_IN:
-      return {
-        user: action.user
-      };
-    default: return state;
-  }
+import { LOGIN_CLEAN_STATE } from './actions';
+
+const initState = {};
+
+export default (state = initState, action = {}) => {
+    const { type} = action;
+    switch (type) {
+        case LOGIN_CLEAN_STATE:
+            return Object.assign({}, state, initState);
+        default: 
+            return state;
+    }
 }

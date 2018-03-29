@@ -1,9 +1,13 @@
-const USER_LOGGER_OUT = "USER_LOGGER_OUT";
+import { HOME_CLEAN_STATE } from './actions';
 
-export default (state = {}, action = {}) => {
-    switch (action.type) {
-      case USER_LOGGER_OUT:
-        return action.payload.state;
-      default: return state;
+const initState = {};
+
+export default (state = initState, action = {}) => {
+    const { type } = action;
+    switch (type) {
+        case HOME_CLEAN_STATE:
+            return Object.assign({}, state, initState);
+        default: 
+            return state;
     }
-  }
+}

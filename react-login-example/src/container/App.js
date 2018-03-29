@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import LoginPage from '../views/login/pages/LoginPage';
-import HomePage from '../views/home/pages/HomePage';
+import LoginView from '../views/Login';
+import HomeView from '../views/Home';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 
@@ -9,8 +9,8 @@ class App extends Component {
     return (
       <Router>
       <div>
-        <Route path="/" exact component={LoginPage}/>
-        <Route path="/homepage" exact component={HomePage}/>
+        <Route path="/" exact component={LoginView}/>
+        <Route path="/homepage" exact component={HomeView}/>
       </div>
       </Router>
     );
