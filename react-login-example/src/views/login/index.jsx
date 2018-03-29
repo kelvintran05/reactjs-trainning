@@ -20,15 +20,10 @@ class LoginView extends Component {
     //view actions
     submit = credentials => {
         const data = {
-            email: 'caotri@dsadas.com', password: '123456'
+            email: 'caotri212@gmail.com', password: '123456'
         };
         this.props.actions.loginAction(data);
     }
-        // this.props.actions.loginAction(data).then(() => {
-        //     this.props.actions.login();
-        //     this.props.history.push("/homepage");
-        // });
-
 }
 const mapStateToProps = state => ({
     isLogin: state.App.isLogin,
