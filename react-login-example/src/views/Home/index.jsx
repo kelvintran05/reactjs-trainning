@@ -5,6 +5,7 @@ import { bindActionCreators } from 'redux';
 
 import * as homeViewActions from './actions';
 
+
 class HomePage extends React.Component {
     render() {
         if (this.props.isLogin === false) {

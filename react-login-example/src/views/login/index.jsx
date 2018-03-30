@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import { Redirect } from 'react-router-dom';
 
-import LoginPage from './pages/LoginPage';
+import LoginPage from './pages/loginPage';
 import * as loginViewActions from './actions';
 
 import './style.css';
@@ -19,10 +19,8 @@ class LoginView extends Component {
     }
     //view actions
     submit = credentials => {
-        const data = {
-            email: 'caotri212@gmail.com', password: '123456'
-        };
-        this.props.actions.loginAction(data);
+        console.log(credentials.data);
+        this.props.actions.loginAction(credentials.data);
     }
 }
 const mapStateToProps = state => ({
