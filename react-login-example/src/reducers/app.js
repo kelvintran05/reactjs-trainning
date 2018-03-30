@@ -1,7 +1,7 @@
 import { APP_LOGIN_REQUEST, APP_LOGIN_SUCCESS, APP_LOGIN_ERROR, APP_LOGOUT } from '../actions/app';
 
 const initState = {
-    isLogin: false,
+    isLogin: true,
     error: null
 };
 

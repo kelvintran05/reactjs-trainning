@@ -9,13 +9,15 @@ class App extends Component {
     render() {
         return (
             <div>
-                <NavView/>
-                <Router>
-                    <div>
-                        <Route path="/" exact component={LoginView} />
-                        <Route path="/homepage" exact component={HomeView} />
-                    </div>
-                </Router>
+                <NavView />
+                <div className="container">
+                    <Router>
+                        <div>
+                            <Route path="/" exact component={LoginView} />
+                            <Route path="/homepage" exact component={HomeView} />
+                        </div>
+                    </Router>
+                </div>
             </div>
         );
     }
