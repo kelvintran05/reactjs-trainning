@@ -73,7 +73,7 @@ const Navigation = props => {
 };
 Navigation.propTypes = {
     onSelected: PropTypes.func.isRequired,
-    show: PropTypes.boolean
+    show: PropTypes.bool
 };
 Navigation.defaultProps = {
     show: true
